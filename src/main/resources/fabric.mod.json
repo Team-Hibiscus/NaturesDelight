@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "natures_spirit",
+  "version": "${version}",
+  "name": "Nature's Delight",
+  "description": "Nature's Spirit x Farmers Delight",
+  "authors": [
+    "Team Hibiscus"
+  ],
+  "contact": {
+    "repo": "https://github.com/ekans/untitled"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/natures_spirit/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.hibiscus.natures_spirit.client.NaturesDelightClient"
+    ],
+    "main": [
+      "net.hibiscus.natures_spirit.NaturesDelight"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
