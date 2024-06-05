@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "bites=0,facing=east": {
+      "model": "natures_delight:block/manakish",
+      "y": 90
+    },
+    "bites=0,facing=north": {
+      "model": "natures_delight:block/manakish"
+    },
+    "bites=0,facing=south": {
+      "model": "natures_delight:block/manakish",
+      "y": 180
+    },
+    "bites=0,facing=west": {
+      "model": "natures_delight:block/manakish",
+      "y": 270
+    },
+    "bites=1,facing=east": {
+      "model": "natures_delight:block/manakish_slice1",
+      "y": 90
+    },
+    "bites=1,facing=north": {
+      "model": "natures_delight:block/manakish_slice1"
+    },
+    "bites=1,facing=south": {
+      "model": "natures_delight:block/manakish_slice1",
+      "y": 180
+    },
+    "bites=1,facing=west": {
+      "model": "natures_delight:block/manakish_slice1",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "farmersdelight:cabbage_leaf",
+    "farmersdelight:cabbage",
+    "farmersdelight:tomato",
+    "farmersdelight:onion",
+    "farmersdelight:cooked_bacon",
+    "farmersdelight:cooked_chicken_cuts",
+    "farmersdelight:cooked_cod_slice"
+  ]
+}

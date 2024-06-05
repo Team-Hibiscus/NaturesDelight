@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "natures_delight:block/palo_verde_cabinet_front",
+    "side": "natures_delight:block/palo_verde_cabinet_side",
+    "top": "natures_delight:block/palo_verde_cabinet_top"
+  }
+}

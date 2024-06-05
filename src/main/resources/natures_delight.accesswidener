@@ -1,0 +1,4 @@
+accessWidener	v2	named
+accessible	field	net/minecraft/structure/pool/StructurePool	elements	Lit/unimi/dsi/fastutil/objects/ObjectArrayList;
+accessible	field	net/minecraft/structure/pool/StructurePool	elementCounts	Ljava/util/List;
+mutable	field	net/minecraft/structure/pool/StructurePool	elementCounts	Ljava/util/List;

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:coconut"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "natures_spirit:coconut_half"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

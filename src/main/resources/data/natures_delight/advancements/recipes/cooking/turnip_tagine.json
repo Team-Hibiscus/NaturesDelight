@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_desert_turnip": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "natures_spirit:desert_turnip"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_delight:cooking/turnip_tagine"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_desert_turnip",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_delight:cooking/turnip_tagine"
+    ]
+  },
+  "sends_telemetry_event": true
+}

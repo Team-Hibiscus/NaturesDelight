@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "natures_spirit:cypress_trapdoor"
+    },
+    "_": {
+      "item": "natures_spirit:cypress_slab"
+    }
+  },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "result": {
+    "item": "natures_delight:cypress_cabinet"
+  },
+  "show_notification": true
+}

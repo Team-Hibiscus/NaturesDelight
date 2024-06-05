@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#natures_spirit:is_warm_lush_field",
+    "#natures_spirit:is_tropical_woods",
+    "#natures_spirit:is_scorched",
+    "#natures_spirit:is_adobe"
+  ]
+}

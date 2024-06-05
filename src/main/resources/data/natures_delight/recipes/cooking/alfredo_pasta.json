@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:chicken_cuts"
+    },
+    {
+      "tag": "c:foods/pastas"
+    },
+    {
+      "item": "natures_spirit:cheese_bucket"
+    },
+    {
+      "tag": "natures_spirit:olives"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "natures_delight:alfredo_pasta"
+  }
+}

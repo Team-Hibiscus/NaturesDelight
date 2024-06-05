@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:sage_succulent"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "minecraft:green_dye"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

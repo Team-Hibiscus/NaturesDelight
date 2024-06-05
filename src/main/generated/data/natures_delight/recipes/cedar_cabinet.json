@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "natures_spirit:cedar_trapdoor"
+    },
+    "_": {
+      "item": "natures_spirit:cedar_slab"
+    }
+  },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "result": {
+    "item": "natures_delight:cedar_cabinet"
+  },
+  "show_notification": true
+}

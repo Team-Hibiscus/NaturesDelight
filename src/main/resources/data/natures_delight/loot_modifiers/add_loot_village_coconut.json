@@ -1,0 +1,11 @@
+{
+  "type": "farmersdelight:add_loot_table",
+  "conditions":
+  [
+    {
+      "condition": "porting_lib:loot_table_id",
+      "loot_table_id": "natures_spirit:chests/village/village_coconut"
+    }
+  ],
+  "lootTable": "natures_delight:chests/ns_village_coconut"
+}

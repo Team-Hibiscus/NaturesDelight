@@ -1,0 +1,18 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+      {
+        "item": "natures_spirit:desert_turnip_block"
+      }
+    ],
+    "tool": {
+      "type": "farmersdelight:tool",
+      "tag": "c:tools/axes"
+    },
+    "result": [
+      {
+        "item": "natures_spirit:desert_turnip",
+        "count": 9
+      }
+    ]
+  }

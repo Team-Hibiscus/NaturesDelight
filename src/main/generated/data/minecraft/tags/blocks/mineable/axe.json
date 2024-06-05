@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "natures_delight:mahogany_cabinet",
+    "natures_delight:saxaul_cabinet",
+    "natures_delight:redwood_cabinet",
+    "natures_delight:aspen_cabinet",
+    "natures_delight:fir_cabinet",
+    "natures_delight:cypress_cabinet",
+    "natures_delight:coconut_cabinet",
+    "natures_delight:wisteria_cabinet",
+    "natures_delight:willow_cabinet",
+    "natures_delight:cedar_cabinet",
+    "natures_delight:sugi_cabinet",
+    "natures_delight:palo_verde_cabinet",
+    "natures_delight:olive_cabinet",
+    "natures_delight:joshua_cabinet",
+    "natures_delight:ghaf_cabinet",
+    "natures_delight:maple_cabinet",
+    "natures_delight:larch_cabinet",
+    "natures_delight:desert_turnip_crate"
+  ]
+}

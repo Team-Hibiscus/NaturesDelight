@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coconut_half": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "natures_spirit:coconut_halves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_delight:cooking/coconut_sauce"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coconut_half",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_delight:cooking/coconut_sauce"
+    ]
+  },
+  "sends_telemetry_event": true
+}

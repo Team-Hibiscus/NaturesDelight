@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:ruby_blossoms"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "minecraft:red_dye"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

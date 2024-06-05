@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:travertine"
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:tool",
+    "tag": "c:tools/pickaxes"
+  },
+  "result": [
+    {
+      "item": "natures_spirit:cobbled_travertine"
+    }
+  ]
+}

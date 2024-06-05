@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:purple_wildflower"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "minecraft:purple_dye"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}
