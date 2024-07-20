@@ -6,8 +6,8 @@
     }
   ],
   "tool": {
-    "type": "farmersdelight:tool",
-    "tag": "c:tools/pickaxes"
+    "fabric:type": "farmersdelight:tool_action",
+    "action": "pickaxe_dig"
   },
   "result": [
     {

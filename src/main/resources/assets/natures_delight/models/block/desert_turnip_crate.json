@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "bottom": "natures_delight:block/crate_bottom",
+    "bottom": "farmersdelight:block/crate_bottom",
     "side": "natures_delight:block/desert_turnip_crate_side",
     "top": "natures_delight:block/desert_turnip_crate_top"
   }
