@@ -16,7 +16,7 @@
       "conditions": {
         "location": [
           {
-            "block": "natures_spirit:desert_turnip",
+            "block": "natures_spirit:desert_turnip_stem",
             "condition": "minecraft:block_state_property"
           }
         ]

@@ -37,7 +37,7 @@ import java.util.ArrayList;
 public class NaturesDelightBlocksAndItems {
    public static Item registerWithTab(final String name, final Item item, Item itemBefore) {
       Item block = registerItem(name, item);
-      ItemGroupEvents.modifyEntriesEvent(HibiscusItemGroups.NS_WOOD_ITEM_GROUP).register(entries -> entries.addAfter(itemBefore, block));
+      ItemGroupEvents.modifyEntriesEvent(HibiscusItemGroups.NS_ITEM_GROUP).register(entries -> entries.addAfter(itemBefore, block));
       return block;
    }
    public static final ArrayList<Block> list = new ArrayList<>();
@@ -47,43 +47,43 @@ public class NaturesDelightBlocksAndItems {
    public static final  Block SHIITAKE_MUSHROOM_COLONY_BLOCK = registerBlock("shiitake_mushroom_colony",
            new MushroomColonyBlock(AbstractBlock.Settings.copy(HibiscusMiscBlocks.SHIITAKE_MUSHROOM), HibiscusMiscBlocks.SHIITAKE_MUSHROOM::asItem));
    public static final  Item DESERT_TURNIP_CRATE_ITEM = registerItem("desert_turnip_crate",
-           new BlockItem(DESERT_TURNIP_CRATE_BLOCK, ModItems.basicItem()), HibiscusItemGroups.NS_MISC_ITEM_GROUP, HibiscusMiscBlocks.DESERT_TURNIP_BLOCK.asItem());
+           new BlockItem(DESERT_TURNIP_CRATE_BLOCK, ModItems.basicItem()), HibiscusItemGroups.NS_ITEM_GROUP, HibiscusMiscBlocks.DESERT_TURNIP_BLOCK.asItem());
    public static final  Item SHIITAKE_MUSHROOM_COLONY_ITEM = registerItem("shiitake_mushroom_colony",
-           new MushroomColonyItem(SHIITAKE_MUSHROOM_COLONY_BLOCK, ModItems.basicItem()), HibiscusItemGroups.NS_MISC_ITEM_GROUP, HibiscusMiscBlocks.SHIITAKE_MUSHROOM.asItem());
+           new MushroomColonyItem(SHIITAKE_MUSHROOM_COLONY_BLOCK, ModItems.basicItem()), HibiscusItemGroups.NS_ITEM_GROUP, HibiscusMiscBlocks.SHIITAKE_MUSHROOM.asItem());
 
    public static final Block MANAKISH_BLOCK = registerBlock("manakish", new ManakishBlock(FabricBlockSettings.copy(Blocks.CAKE)));
-   public static final Item MANAKISH_ITEM = registerItem("manakish", new BlockItem(MANAKISH_BLOCK, ModItems.basicItem()), HibiscusItemGroups.NS_MISC_ITEM_GROUP, HibiscusMiscBlocks.WHOLE_PIZZA);
+   public static final Item MANAKISH_ITEM = registerItem("manakish", new BlockItem(MANAKISH_BLOCK, ModItems.basicItem()), HibiscusItemGroups.NS_ITEM_GROUP, HibiscusMiscBlocks.WHOLE_PIZZA);
 
    public static final FoodComponent MANAKISH_SLICE = (new FoodComponent.Builder())
            .hunger(3).saturationModifier(0.3f).snack().build();
-   public static final Item MANAKISH_SLICE_ITEM = registerItem("manakish_slice", new Item(ModItems.foodItem(MANAKISH_SLICE)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, MANAKISH_ITEM);
+   public static final Item MANAKISH_SLICE_ITEM = registerItem("manakish_slice", new Item(ModItems.foodItem(MANAKISH_SLICE)), HibiscusItemGroups.NS_ITEM_GROUP, MANAKISH_ITEM);
    public static final FoodComponent ALFREDO_PASTA = (new FoodComponent.Builder())
            .hunger(12).saturationModifier(0.8f)
            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.SHORT_DURATION, 0), 1.0F).build();
-   public static final Item ALFREDO_PASTA_ITEM = registerItem("alfredo_pasta", new Item(ModItems.bowlFoodItem(ALFREDO_PASTA)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, MANAKISH_SLICE_ITEM);
+   public static final Item ALFREDO_PASTA_ITEM = registerItem("alfredo_pasta", new Item(ModItems.bowlFoodItem(ALFREDO_PASTA)), HibiscusItemGroups.NS_ITEM_GROUP, MANAKISH_SLICE_ITEM);
    public static final FoodComponent TURNIP_TAGINE = (new FoodComponent.Builder())
            .hunger(12).saturationModifier(0.70f)
            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), FoodValues.MEDIUM_DURATION, 0), 1.0F).build();
-   public static final Item TURNIP_TAGINE_ITEM = registerItem("turnip_tagine", new Item(ModItems.bowlFoodItem(TURNIP_TAGINE)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, ALFREDO_PASTA_ITEM);
-   public static final Item COCONUT_SAUCE_ITEM = registerItem("coconut_sauce", new Item(ModItems.bowlFoodItem(FoodValues.TOMATO_SAUCE)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, TURNIP_TAGINE_ITEM);
+   public static final Item TURNIP_TAGINE_ITEM = registerItem("turnip_tagine", new Item(ModItems.bowlFoodItem(TURNIP_TAGINE)), HibiscusItemGroups.NS_ITEM_GROUP, ALFREDO_PASTA_ITEM);
+   public static final Item COCONUT_SAUCE_ITEM = registerItem("coconut_sauce", new Item(ModItems.bowlFoodItem(FoodValues.TOMATO_SAUCE)), HibiscusItemGroups.NS_ITEM_GROUP, TURNIP_TAGINE_ITEM);
    public static final FoodComponent SWEET_AND_SAVORY_SAUTE = (new FoodComponent.Builder())
            .hunger(14).saturationModifier(0.80f)
            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
-   public static final Item SWEET_AND_SAVORY_SAUTE_ITEM = registerItem("sweet_and_savory_saute", new Item(ModItems.bowlFoodItem(SWEET_AND_SAVORY_SAUTE)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, COCONUT_SAUCE_ITEM);
+   public static final Item SWEET_AND_SAVORY_SAUTE_ITEM = registerItem("sweet_and_savory_saute", new Item(ModItems.bowlFoodItem(SWEET_AND_SAVORY_SAUTE)), HibiscusItemGroups.NS_ITEM_GROUP, COCONUT_SAUCE_ITEM);
    public static final FoodComponent FAFARU = (new FoodComponent.Builder())
            .hunger(14).saturationModifier(0.8f)
            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
-   public static final Item FAFARU_ITEM = registerItem("fafaru", new Item(ModItems.bowlFoodItem(FAFARU)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, SWEET_AND_SAVORY_SAUTE_ITEM);
+   public static final Item FAFARU_ITEM = registerItem("fafaru", new Item(ModItems.bowlFoodItem(FAFARU)), HibiscusItemGroups.NS_ITEM_GROUP, SWEET_AND_SAVORY_SAUTE_ITEM);
    public static final FoodComponent COCONUT_PANCAKES = (new FoodComponent.Builder())
            .hunger(10).saturationModifier(0.6f)
            .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.SHORT_DURATION, 0), 1.0F).build();
-   public static final Item COCONUT_PANCAKES_ITEM = registerItem("coconut_pancakes", new Item(ModItems.bowlFoodItem(COCONUT_PANCAKES)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, FAFARU_ITEM);
+   public static final Item COCONUT_PANCAKES_ITEM = registerItem("coconut_pancakes", new Item(ModItems.bowlFoodItem(COCONUT_PANCAKES)), HibiscusItemGroups.NS_ITEM_GROUP, FAFARU_ITEM);
    public static final FoodComponent COCONUT_BREAD = (new FoodComponent.Builder())
            .hunger(8).saturationModifier(0.6f).build();
-   public static final Item COCONUT_BREAD_ITEM = registerItem("coconut_bread", new Item(ModItems.foodItem(COCONUT_BREAD)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, COCONUT_PANCAKES_ITEM);
+   public static final Item COCONUT_BREAD_ITEM = registerItem("coconut_bread", new Item(ModItems.foodItem(COCONUT_BREAD)), HibiscusItemGroups.NS_ITEM_GROUP, COCONUT_PANCAKES_ITEM);
    public static final FoodComponent COCADA = (new FoodComponent.Builder())
            .hunger(5).saturationModifier(0.7f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, FoodValues.BRIEF_DURATION, 0), 0.5F).build();
-   public static final Item COCADA_ITEM = registerItem("cocada", new Item(ModItems.foodItem(COCADA)), HibiscusItemGroups.NS_MISC_ITEM_GROUP, COCONUT_BREAD_ITEM);
+   public static final Item COCADA_ITEM = registerItem("cocada", new Item(ModItems.foodItem(COCADA)), HibiscusItemGroups.NS_ITEM_GROUP, COCONUT_BREAD_ITEM);
 
    public static void registerBlocksAndItems() {
       FabricBlockEntityTypeBuilder <CabinetBlockEntity> builder = FabricBlockEntityTypeBuilder.create(CabinetBlockEntity::new);
