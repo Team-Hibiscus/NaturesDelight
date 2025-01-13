@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "natures_spirit:wisteria_trapdoor"
+    },
+    "_": {
+      "item": "natures_spirit:wisteria_slab"
+    }
+  },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "result": {
+    "count": 1,
+    "id": "natures_delight:wisteria_cabinet"
+  }
+}

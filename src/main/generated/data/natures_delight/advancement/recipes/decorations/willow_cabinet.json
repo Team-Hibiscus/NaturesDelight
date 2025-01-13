@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_delight:willow_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_willow_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natures_spirit:willow_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_willow_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_delight:willow_cabinet"
+    ]
+  }
+}

@@ -4,12 +4,11 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.*;
-import net.hibiscus.naturespirit.registration.HibiscusRegistryHelper;
-import net.hibiscus.naturespirit.registration.WoodSet;
-import net.hibiscus.naturespirit.registration.block_registration.HibiscusMiscBlocks;
+import net.hibiscus.naturespirit.registration.NSRegistryHelper;
+import net.hibiscus.naturespirit.registration.sets.WoodSet;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -19,6 +18,7 @@ import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.RegistryWrapper.WrapperLookup;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
@@ -50,7 +50,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       protected void configure(RegistryWrapper.WrapperLookup arg) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(block);
          }
          this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(NaturesDelightBlocksAndItems.DESERT_TURNIP_CRATE_BLOCK);
@@ -63,7 +63,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       protected void configure(RegistryWrapper.WrapperLookup arg) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             Item item = block.asItem();
             this.getOrCreateTagBuilder(ModTags.WOODEN_CABINETS).add(item);
          }
@@ -72,30 +72,31 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
 
    public static class NaturesDelightRecipeGenerator extends FabricRecipeProvider {
 
-      public NaturesDelightRecipeGenerator(FabricDataOutput output) {
-         super(output);
+      public NaturesDelightRecipeGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+         super(output, registryLookup);
       }
-      public static void offerShapelessRecipe(Consumer <RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input, @Nullable String group, int outputCount) {
-         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, outputCount).input(input).group(group).criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter, new Identifier("natures_delight", RecipeProvider.convertBetween(output, input)));
+      public static void offerShapelessRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, @Nullable String group, int outputCount) {
+         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, outputCount).input(input).group(group).criterion(RecipeProvider.hasItem(input), RecipeProvider.conditionsFromItem(input)).offerTo(exporter, Identifier.of("natures_delight", RecipeProvider.convertBetween(output, input)));
       }
-      public static void createCabinetRecipe(Consumer <RecipeJsonProvider> exporter, ItemConvertible output, ItemConvertible input, ItemConvertible input2) {
-         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output).pattern("___").pattern("D D").pattern("___").input('_', input).input('D', input2).criterion(hasItem(input2), conditionsFromItem(input2)).offerTo(exporter, new Identifier(NaturesDelight.MOD_ID, RecipeProvider.getRecipeName(output)));
-      }
-      protected Identifier getRecipeIdentifier(Identifier identifier) {
-         return new Identifier("natures_delight", identifier.getPath());
+      public static void createCabinetRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, ItemConvertible input2) {
+         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, output).pattern("___").pattern("D D").pattern("___").input('_', input).input('D', input2).criterion(hasItem(input2), conditionsFromItem(input2)).offerTo(exporter, Identifier.of(NaturesDelight.MOD_ID, RecipeProvider.getRecipeName(output)));
       }
 
-      public void generate(Consumer<RecipeJsonProvider> exporter) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
-            WoodSet woodSet = HibiscusRegistryHelper.WoodHashMap.get(StringUtils.removeEnd(Registries.BLOCK.getId(block).getPath(), "_cabinet"));
+      protected Identifier getRecipeIdentifier(Identifier identifier) {
+         return Identifier.of("natures_delight", identifier.getPath());
+      }
+
+      public void generate(RecipeExporter exporter) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+            WoodSet woodSet = NSRegistryHelper.WoodHashMap.get(StringUtils.removeEnd(Registries.BLOCK.getId(block).getPath(), "_cabinet"));
             createCabinetRecipe(exporter, block, woodSet.getSlab(), woodSet.getTrapDoor());
          }
       }
    }
 
    private static class NaturesDelightLangGenerator extends FabricLanguageProvider {
-      protected NaturesDelightLangGenerator(FabricDataOutput dataOutput) {
-         super(dataOutput);
+      protected NaturesDelightLangGenerator(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+         super(dataOutput, registryLookup);
       }
 
       public static String capitalizeString(String string) {
@@ -124,7 +125,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          translationBuilder.add(item, temp);
       }
 
-      public void generateTranslations(FabricLanguageProvider.TranslationBuilder translationBuilder) {
+      public void generateTranslations(WrapperLookup wrapperLookup, FabricLanguageProvider.TranslationBuilder translationBuilder) {
          this.generateBlockTranslations(NaturesDelightBlocksAndItems.DESERT_TURNIP_CRATE_BLOCK, translationBuilder);
          this.generateBlockTranslations(NaturesDelightBlocksAndItems.MANAKISH_BLOCK, translationBuilder);
          translationBuilder.add(NaturesDelightBlocksAndItems.MANAKISH_SLICE_ITEM, "Slice of Manakish");
@@ -144,7 +145,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cabbage_leaf", "With Chopped Cabbage");
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_chicken_cuts", "With Chopped Chicken");
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_cod_slice", "With Chopped Cod");
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             this.generateBlockTranslations(block, translationBuilder);
          }
       }
@@ -176,7 +177,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          blockStateModelGenerator.blockStateCollector.accept(createCabinetBlockState(cabinet, closedId, openId));
       }
       public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             registerCabinets(block, blockStateModelGenerator);
          }
       }
@@ -195,22 +196,16 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
    }
 
    private static class NaturesDelightBlockLootTableProvider extends FabricBlockLootTableProvider {
-      private static final LootCondition.Builder WITH_SILK_TOUCH_OR_SHEARS;
 
-      protected NaturesDelightBlockLootTableProvider(FabricDataOutput dataOutput) {
-         super(dataOutput);
+      protected NaturesDelightBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+         super(dataOutput, registryLookup);
       }
 
       public void generate() {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             addDrop(block, nameableContainerDrops(block));
          }
-         System.out.println("YOUR GAY");
          addDrop(NaturesDelightBlocksAndItems.DESERT_TURNIP_CRATE_BLOCK);
-      }
-
-      static {
-         WITH_SILK_TOUCH_OR_SHEARS = WITH_SHEARS.or(WITH_SILK_TOUCH);
       }
    }
 }

@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'fabric-loom' version '1.8-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -16,12 +16,10 @@ repositories {
         name = "Greenhouse Maven"
         url = 'https://maven.greenhouseteam.dev/releases/'
     }
-    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
+//    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
     maven {
-        url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
-        content {
-            includeGroup "com.jamieswhiteshirt"
-        }
+        name = "Greenhouse Maven (Snapshots)" // Temporary Porting Lib Fork for 1.21
+        url = 'https://repo.greenhouse.house/snapshots/'
     }
     maven {
         url "https://jitpack.io/" // Fabric ASM
@@ -103,7 +101,7 @@ sourceSets {
     }
 }
 
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly

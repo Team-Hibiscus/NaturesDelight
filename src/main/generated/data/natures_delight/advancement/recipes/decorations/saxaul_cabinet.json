@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_saxaul_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natures_spirit:saxaul_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_delight:saxaul_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_saxaul_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_delight:saxaul_cabinet"
+    ]
+  }
+}

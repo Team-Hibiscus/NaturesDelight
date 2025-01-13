@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_delight:wisteria_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wisteria_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natures_spirit:wisteria_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wisteria_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_delight:wisteria_cabinet"
+    ]
+  }
+}
