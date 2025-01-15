@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "natures_spirit:framed_paper_trapdoor"
+        }
+    ],
+    "result": [
+        {
+            "item": {
+                "count": 1,
+                "id": "natures_spirit:framed_paper_block"
+            }
+        }
+    ],
+    "tool": {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "axe_dig"
+    }
+}

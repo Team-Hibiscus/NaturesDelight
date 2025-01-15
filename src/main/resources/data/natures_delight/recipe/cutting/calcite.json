@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "minecraft:calcite"
+        }
+    ],
+    "result": [
+        {
+            "item": {
+                "count": 4,
+                "id": "natures_spirit:calcite_shard"
+            }
+        }
+    ],
+    "tool": {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "pickaxe_dig"
+    }
+}

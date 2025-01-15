@@ -1,0 +1,20 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "natures_spirit:white_chalk"
+        }
+    ],
+    "result": [
+        {
+            "item": {
+                "count": 4,
+                "id": "natures_spirit:chalk_powder"
+            }
+        }
+    ],
+    "tool": {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "pickaxe_dig"
+    }
+}

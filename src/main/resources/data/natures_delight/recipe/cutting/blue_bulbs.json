@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "natures_spirit:blue_bulbs"
+        }
+    ],
+    "result": [
+        {
+            "item": {
+                "count": 5,
+                "id": "minecraft:blue_dye"
+            }
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "farmersdelight:cutting",
+    "ingredients": [
+        {
+            "item": "natures_spirit:bleeding_heart"
+        }
+    ],
+    "result": [
+        {
+            "item": {
+                "count": 5,
+                "id": "minecraft:pink_dye"
+            }
+        }
+    ],
+    "tool": {
+        "tag": "c:tools/knife"
+    }
+}
