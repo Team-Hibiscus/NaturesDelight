@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:aspen_log"
+    }
+  ],
+  "tool": {
+    "fabric:type": "farmersdelight:item_ability",
+    "action": "axe_strip"
+  },
+  "result": [
+    {
+      "item": {
+        "id": "natures_spirit:stripped_aspen_log"
+      }
+    },
+    {
+      "item": {
+        "id": "farmersdelight:tree_bark"
+      }
+    }
+  ],
+  "sound": {"sound_id": "minecraft:item.axe.strip"}
+}

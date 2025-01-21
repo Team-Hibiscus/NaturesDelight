@@ -1,0 +1,7 @@
+{
+  "texture_path": "natures_delight:block/pizza/tomato",
+  "hunger": 1,
+  "saturation": 0.15,
+  "translation_key": "tomato",
+  "item": "farmersdelight:tomato"
+}

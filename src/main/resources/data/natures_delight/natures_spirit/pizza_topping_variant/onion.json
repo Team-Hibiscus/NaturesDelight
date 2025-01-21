@@ -1,0 +1,7 @@
+{
+  "texture_path": "natures_delight:block/pizza/onion",
+  "hunger": 1,
+  "saturation": 0.15,
+  "translation_key": "onion",
+  "item": "farmersdelight:onion"
+}

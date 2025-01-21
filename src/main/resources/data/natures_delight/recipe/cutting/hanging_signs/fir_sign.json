@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:fir_hanging_sign"
+    }
+  ],
+  "tool": {
+    "fabric:type": "farmersdelight:item_ability",
+    "action": "axe_strip"
+  },
+  "result": [
+    { "item": {
+      "id": "natures_spirit:fir_planks"
+    }}
+  ]
+}

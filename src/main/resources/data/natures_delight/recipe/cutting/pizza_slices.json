@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:whole_pizza"
+    }
+  ],
+  "result": [
+    { "item": {
+      "count": 4,
+      "id": "natures_spirit:quarter_pizza"
+    }}
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "texture_path": "natures_delight:block/pizza/cooked_cod_slice",
+  "hunger": 1,
+  "saturation": 0.15,
+  "translation_key": "cooked_cod_slice",
+  "item": "farmersdelight:cooked_cod_slice"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "natures_spirit:bluebell"
+    }
+  ],
+  "result": [
+    { "item": {
+      "count": 3,
+      "id": "minecraft:blue_dye"
+    }}
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

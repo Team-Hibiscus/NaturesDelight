@@ -138,13 +138,13 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          this.generateItemTranslations(NaturesDelightBlocksAndItems.COCONUT_PANCAKES_ITEM, translationBuilder);
          this.generateItemTranslations(NaturesDelightBlocksAndItems.COCONUT_BREAD_ITEM, translationBuilder);
          this.generateBlockTranslations(NaturesDelightBlocksAndItems.SHIITAKE_MUSHROOM_COLONY_BLOCK, translationBuilder);
-         translationBuilder.add("block.natures_spirit.pizza.farmersdelight.onion", "With Onions");
-         translationBuilder.add("block.natures_spirit.pizza.farmersdelight.tomato", "With Tomatoes");
-         translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_bacon", "With Cooked Bacon");
-         translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cabbage", "With Cabbage");
-         translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cabbage_leaf", "With Chopped Cabbage");
-         translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_chicken_cuts", "With Chopped Chicken");
-         translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_cod_slice", "With Chopped Cod");
+         translationBuilder.add("block.natures_spirit.pizza.onion", "With Onions");
+         translationBuilder.add("block.natures_spirit.pizza.tomato", "With Tomatoes");
+         translationBuilder.add("block.natures_spirit.pizza.cooked_bacon", "With Cooked Bacon");
+         translationBuilder.add("block.natures_spirit.pizza.cabbage", "With Cabbage");
+         translationBuilder.add("block.natures_spirit.pizza.cabbage_leaf", "With Chopped Cabbage");
+         translationBuilder.add("block.natures_spirit.pizza.cooked_chicken_cuts", "With Chopped Chicken");
+         translationBuilder.add("block.natures_spirit.pizza.cooked_cod_slice", "With Chopped Cod");
          for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             this.generateBlockTranslations(block, translationBuilder);
          }

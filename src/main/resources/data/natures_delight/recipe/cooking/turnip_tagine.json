@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "farmersdelight:onion"
+    },
+    {
+      "item": "natures_spirit:cheese_bucket"
+    },
+    {
+      "item": "natures_spirit:desert_turnip"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "natures_delight:turnip_tagine"
+  }
+}

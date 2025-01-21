@@ -1,0 +1,7 @@
+{
+  "texture_path": "natures_delight:block/pizza/cooked_bacon",
+  "hunger": 2,
+  "saturation": 0.2,
+  "translation_key": "cooked_bacon",
+  "item": "farmersdelight:cooked_bacon"
+}

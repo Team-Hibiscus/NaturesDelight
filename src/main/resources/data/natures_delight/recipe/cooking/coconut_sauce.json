@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "natures_spirit:coconut_half"
+    },
+    {
+      "item": "natures_spirit:coconut_half"
+    },
+    {
+      "item": "natures_spirit:coconut_half"
+    },
+    {
+      "item": "natures_spirit:coconut_half"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "natures_delight:coconut_sauce"
+  }
+}

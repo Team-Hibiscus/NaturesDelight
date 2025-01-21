@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "natures_delight:manakish_slice"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "natures_delight:manakish"
+  },
+  "show_notification": true
+}
