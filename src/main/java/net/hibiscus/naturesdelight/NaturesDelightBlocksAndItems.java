@@ -1,8 +1,7 @@
 package net.hibiscus.naturesdelight;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.hibiscus.naturesdelight.cabinet.NDCabinetBlock;
-import net.hibiscus.naturesdelight.cabinet.NDCabinetBlockEntity;
+import net.hibiscus.naturespirit.NatureSpirit;
 import net.hibiscus.naturespirit.config.NSConfig;
 import net.hibiscus.naturespirit.registration.NSItemGroups;
 import net.hibiscus.naturespirit.registration.NSMiscBlocks;
@@ -28,7 +27,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.FoodValues;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.MushroomColonyBlock;
+import vectorwing.farmersdelight.common.block.entity.CabinetBlockEntity;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
@@ -81,15 +82,13 @@ public class NaturesDelightBlocksAndItems {
            .nutrition(5).saturationModifier(0.7f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, FoodValues.BRIEF_DURATION, 0), 0.5F).build();
    public static final Item COCADA_ITEM = registerItem("cocada", new Item(ModItems.foodItem(COCADA)), NSItemGroups.NS_ITEM_GROUP, COCONUT_BREAD_ITEM);
 
-   public static BlockEntityType<NDCabinetBlockEntity> ND_CABINET_BLOCK_ENTITY_TYPE;
-
    public static void registerBlocksAndItems() {
       for (WoodSet woodSet : NSRegistryHelper.WoodHashMap.values()) {
-         Block block = registerBlock(woodSet.getName() + "_cabinet", new NDCabinetBlock(AbstractBlock.Settings.copy(Blocks.BARREL)));
+         Block block = registerBlock(woodSet.getName() + "_cabinet", new CabinetBlock(AbstractBlock.Settings.copy(Blocks.BARREL)));
          registerItem(woodSet.getName() + "_cabinet", new FuelBlockItem(block, ModItems.basicItem(), 300), NSItemGroups.NS_ITEM_GROUP, woodSet.getPlanks().asItem());
          cabinets.add(block);
       }
-      ND_CABINET_BLOCK_ENTITY_TYPE = registerBlockEntity("cabinet", Builder.create(NDCabinetBlockEntity::new, cabinets.toArray(new Block[0])));
+      registerBlockEntity("cabinet", Builder.create(CabinetBlockEntity::new, cabinets.toArray(new Block[0])));
    }
    public static Block registerBlock(String name, Block block) {
       return Registry.register(Registries.BLOCK, Identifier.of(NaturesDelight.MOD_ID, name), block);
@@ -99,7 +98,7 @@ public class NaturesDelightBlocksAndItems {
    }
    public static Item registerItem(String name, Item item, RegistryKey<ItemGroup> group, Item itemBefore) {
       Item item1 = registerItem(name, item);
-      if (NSConfig.creative_tab) ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.addAfter(itemBefore, item1));
+      if (NatureSpirit.CONFIG.creative_tab) ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.addAfter(itemBefore, item1));
       ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(FarmersDelight.MODID, "farmersdelight"))).register(entries -> entries.add(item1));
       return item1;
    }
