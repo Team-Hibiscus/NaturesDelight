@@ -49,7 +49,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       protected void configure(RegistryWrapper.WrapperLookup arg) {
-         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+         for(Block block: NaturesDelightBlocksAndItems.CABINETS) {
             this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(block);
          }
          this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(NaturesDelightBlocksAndItems.DESERT_TURNIP_CRATE_BLOCK);
@@ -62,7 +62,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       protected void configure(RegistryWrapper.WrapperLookup arg) {
-         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+         for(Block block: NaturesDelightBlocksAndItems.CABINETS) {
             Item item = block.asItem();
             this.getOrCreateTagBuilder(ModTags.WOODEN_CABINETS).add(item);
          }
@@ -85,7 +85,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       public void generate(Consumer<RecipeJsonProvider> exporter) {
-         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+         for(Block block: NaturesDelightBlocksAndItems.CABINETS) {
             WoodSet woodSet = NSRegistryHelper.WoodHashMap.get(StringUtils.removeEnd(Registries.BLOCK.getId(block).getPath(), "_cabinet"));
             createCabinetRecipe(exporter, block, woodSet.getSlab(), woodSet.getTrapDoor());
          }
@@ -143,7 +143,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cabbage_leaf", "With Chopped Cabbage");
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_chicken_cuts", "With Chopped Chicken");
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_cod_slice", "With Chopped Cod");
-         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+         for(Block block: NaturesDelightBlocksAndItems.CABINETS) {
             this.generateBlockTranslations(block, translationBuilder);
          }
       }
@@ -175,7 +175,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          blockStateModelGenerator.blockStateCollector.accept(createCabinetBlockState(cabinet, closedId, openId));
       }
       public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+         for(Block block: NaturesDelightBlocksAndItems.CABINETS) {
             registerCabinets(block, blockStateModelGenerator);
          }
       }
@@ -201,7 +201,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       public void generate() {
-         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+         for(Block block: NaturesDelightBlocksAndItems.CABINETS) {
             addDrop(block, nameableContainerDrops(block));
          }
          System.out.println("YOUR GAY");

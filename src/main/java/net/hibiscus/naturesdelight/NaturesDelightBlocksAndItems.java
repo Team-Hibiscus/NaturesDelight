@@ -38,7 +38,7 @@ import java.util.ArrayList;
 
 public class NaturesDelightBlocksAndItems {
 
-   public static final ArrayList<Block> cabinets = new ArrayList<>();
+   public static final ArrayList<Block> CABINETS = new ArrayList<>();
 
    public static final  Block DESERT_TURNIP_CRATE_BLOCK = registerBlock("desert_turnip_crate",
            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
@@ -86,9 +86,9 @@ public class NaturesDelightBlocksAndItems {
       for (WoodSet woodSet : NSRegistryHelper.WoodHashMap.values()) {
          Block block = registerBlock(woodSet.getName() + "_cabinet", new CabinetBlock(AbstractBlock.Settings.copy(Blocks.BARREL)));
          registerItem(woodSet.getName() + "_cabinet", new FuelBlockItem(block, ModItems.basicItem(), 300), NSItemGroups.NS_ITEM_GROUP, woodSet.getPlanks().asItem());
-         cabinets.add(block);
+         CABINETS.add(block);
       }
-      registerBlockEntity("cabinet", FabricBlockEntityTypeBuilder.create(CabinetBlockEntity::new, cabinets.toArray(new Block[0])));
+      registerBlockEntity("cabinet", FabricBlockEntityTypeBuilder.create(CabinetBlockEntity::new, CABINETS.toArray(new Block[0])));
    }
    public static Block registerBlock(String name, Block block) {
       return Registry.register(Registries.BLOCK, Identifier.of(NaturesDelight.MOD_ID, name), block);
