@@ -4,9 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.*;
-import net.hibiscus.naturespirit.registration.HibiscusRegistryHelper;
-import net.hibiscus.naturespirit.registration.WoodSet;
-import net.hibiscus.naturespirit.registration.block_registration.HibiscusMiscBlocks;
+import net.hibiscus.naturespirit.registration.NSRegistryHelper;
+import net.hibiscus.naturespirit.registration.sets.WoodSet;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
@@ -50,7 +49,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       protected void configure(RegistryWrapper.WrapperLookup arg) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(block);
          }
          this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(NaturesDelightBlocksAndItems.DESERT_TURNIP_CRATE_BLOCK);
@@ -63,7 +62,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       protected void configure(RegistryWrapper.WrapperLookup arg) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             Item item = block.asItem();
             this.getOrCreateTagBuilder(ModTags.WOODEN_CABINETS).add(item);
          }
@@ -86,8 +85,8 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       public void generate(Consumer<RecipeJsonProvider> exporter) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
-            WoodSet woodSet = HibiscusRegistryHelper.WoodHashMap.get(StringUtils.removeEnd(Registries.BLOCK.getId(block).getPath(), "_cabinet"));
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
+            WoodSet woodSet = NSRegistryHelper.WoodHashMap.get(StringUtils.removeEnd(Registries.BLOCK.getId(block).getPath(), "_cabinet"));
             createCabinetRecipe(exporter, block, woodSet.getSlab(), woodSet.getTrapDoor());
          }
       }
@@ -144,7 +143,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cabbage_leaf", "With Chopped Cabbage");
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_chicken_cuts", "With Chopped Chicken");
          translationBuilder.add("block.natures_spirit.pizza.farmersdelight.cooked_cod_slice", "With Chopped Cod");
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             this.generateBlockTranslations(block, translationBuilder);
          }
       }
@@ -176,7 +175,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
          blockStateModelGenerator.blockStateCollector.accept(createCabinetBlockState(cabinet, closedId, openId));
       }
       public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             registerCabinets(block, blockStateModelGenerator);
          }
       }
@@ -202,7 +201,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       }
 
       public void generate() {
-         for(Block block: NaturesDelightBlocksAndItems.list) {
+         for(Block block: NaturesDelightBlocksAndItems.cabinets) {
             addDrop(block, nameableContainerDrops(block));
          }
          System.out.println("YOUR GAY");
