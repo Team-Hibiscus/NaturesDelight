@@ -48,12 +48,12 @@ dependencies {
     modImplementation("maven.modrinth:farmers-delight-refabricated:${project.farmers_delight_version}") {
         exclude(group: "net.fabricmc")
     }
-    include(modImplementation("com.github.Chocohead:Fabric-ASM:${project.fabric_asm_version}")) {
+    modImplementation("com.github.Chocohead:Fabric-ASM:${project.fabric_asm_version}") {
         exclude (group: "net.fabricmc.fabric-api")
     }
 
     for (String module in project.port_lib_modules.split(",")) {
-        include(modApi("io.github.fabricators_of_create.Porting-Lib:${module}:${project.port_lib_version}"))
+        modApi("io.github.fabricators_of_create.Porting-Lib:${module}:${project.port_lib_version}")
     }
 }
 
