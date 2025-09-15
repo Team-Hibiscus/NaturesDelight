@@ -7,13 +7,13 @@
       "item": "farmersdelight:chicken_cuts"
     },
     {
-      "tag": "c:foods/pastas"
+      "tag": "c:pasta/raw_pastas"
     },
     {
       "item": "natures_spirit:cheese_bucket"
     },
     {
-      "tag": "natures_spirit:olives"
+      "item": "natures_spirit:olives"
     }
   ],
   "recipe_book_tab": "meals",

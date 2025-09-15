@@ -50,7 +50,7 @@ public class NaturesDelightBlocksAndItems {
            new MushroomColonyItem(SHIITAKE_MUSHROOM_COLONY_BLOCK, ModItems.basicItem()), NSItemGroups.NS_ITEM_GROUP, NSMiscBlocks.SHIITAKE_MUSHROOM.asItem());
 
    public static final Block MANAKISH_BLOCK = registerBlock("manakish", new ManakishBlock(AbstractBlock.Settings.copy(Blocks.CAKE)));
-   public static final Item MANAKISH_ITEM = registerItem("manakish", new BlockItem(MANAKISH_BLOCK, ModItems.basicItem()), NSItemGroups.NS_ITEM_GROUP, NSMiscBlocks.WHOLE_PIZZA);
+   public static final Item MANAKISH_ITEM = registerItem("manakish", new BlockItem(MANAKISH_BLOCK, ModItems.basicItem()), NSItemGroups.NS_ITEM_GROUP, NSMiscBlocks.QUARTER_PIZZA);
 
    public static final FoodComponent MANAKISH_SLICE = (new FoodComponent.Builder()).hunger(3).saturationModifier(0.3f).snack().build();
    public static final Item MANAKISH_SLICE_ITEM = registerItem("manakish_slice", new Item(ModItems.foodItem(MANAKISH_SLICE)), NSItemGroups.NS_ITEM_GROUP, MANAKISH_ITEM);

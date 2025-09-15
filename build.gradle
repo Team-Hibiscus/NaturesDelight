@@ -12,22 +12,13 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
-    maven {
-        name = "Greenhouse Maven"
-        url = 'https://maven.greenhouseteam.dev/releases/'
+    maven { url = "https://mvn.devos.one/releases/" }
+    maven { // for Porting Lib: Fabric ASM
+        url = "https://jitpack.io/"
     }
-    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
-    maven {
-        url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
-        content {
-            includeGroup "com.jamieswhiteshirt"
-        }
-    }
-    maven {
-        url "https://jitpack.io/" // Fabric ASM
-        content {
-            excludeGroup "io.github.fabricators_of_create"
-        }
+    maven { // Reach Entity Attributes
+        url = "https://maven.jamieswhiteshirt.com/libs-release"
+        content { includeGroup("com.jamieswhiteshirt") }
     }
     maven { url = 'https://maven.minecraftforge.net/' }
     maven { url = 'https://maven.parchmentmc.org' }
@@ -54,8 +45,15 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
     modImplementation "maven.modrinth:natures-spirit:${project.natures_spirit_version}"
-    modImplementation("vectorwing:FarmersDelight:${project.farmers_delight_version}") {
+    modImplementation("maven.modrinth:farmers-delight-refabricated:${project.farmers_delight_version}") {
         exclude(group: "net.fabricmc")
+    }
+    include(modImplementation("com.github.Chocohead:Fabric-ASM:${project.fabric_asm_version}")) {
+        exclude (group: "net.fabricmc.fabric-api")
+    }
+
+    for (String module in project.port_lib_modules.split(",")) {
+        include(modApi("io.github.fabricators_of_create.Porting-Lib:${module}:${project.port_lib_version}"))
     }
 }
 
