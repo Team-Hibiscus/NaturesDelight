@@ -13,15 +13,6 @@ repositories {
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
     maven {
-        name = "Greenhouse Maven"
-        url = 'https://maven.greenhouseteam.dev/releases/'
-    }
-//    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
-    maven {
-        name = "Greenhouse Maven (Snapshots)" // Temporary Porting Lib Fork for 1.21
-        url = 'https://repo.greenhouse.house/snapshots/'
-    }
-    maven {
         url "https://jitpack.io/" // Fabric ASM
         content {
             excludeGroup "io.github.fabricators_of_create"
@@ -52,8 +43,10 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
     modImplementation "maven.modrinth:natures-spirit:${project.natures_spirit_version}"
-    modImplementation("vectorwing:FarmersDelight:${project.farmers_delight_version}") {
-        exclude(group: "net.fabricmc")
+    modImplementation("maven.modrinth:farmers-delight-refabricated:${project.farmers_delight_version}")
+
+    modImplementation("com.github.Chocohead:Fabric-ASM:${project.fabric_asm_version}") {
+        exclude (group: "net.fabricmc.fabric-api")
     }
 }
 
