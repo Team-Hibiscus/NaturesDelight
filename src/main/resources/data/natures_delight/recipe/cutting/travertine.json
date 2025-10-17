@@ -7,7 +7,7 @@
   ],
   "tool": {
     "fabric:type": "farmersdelight:item_ability",
-    "action": "pickaxe_strip"
+    "action": "pickaxe_dig"
   },
   "result": [
     { "item": {

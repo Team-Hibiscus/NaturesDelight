@@ -7,7 +7,7 @@
     ],
     "tool": {
       "fabric:type": "farmersdelight:item_ability",
-    "action": "axe_strip"
+    "action": "axe_dig"
     },
     "result": [
       {
