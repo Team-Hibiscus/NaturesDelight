@@ -1,0 +1,52 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    [
+      {
+        "item": "natures_spirit:blooming_paper_door"
+      },
+      {
+        "item": "natures_spirit:blooming_paper_trapdoor"
+      },
+      {
+        "item": "natures_spirit:framed_paper_door"
+      },
+      {
+        "item": "natures_spirit:framed_paper_trapdoor"
+      },
+      {
+        "item": "natures_spirit:paper_door"
+      },
+      {
+        "item": "natures_spirit:paper_trapdoor"
+      },
+      {
+        "item": "natures_spirit:paper_sign"
+      },
+      {
+        "item": "natures_spirit:paper_hanging_sign"
+      }
+    ]
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 2,
+        "id": "minecraft:paper"
+      }
+    }
+  ],
+  "tool": {
+    "fabric:type": "fabric:any",
+    "ingredients": [
+      {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "axe_dig"
+      },
+      {
+        "tag": "minecraft:axes"
+      }
+    ]
+  }
+}

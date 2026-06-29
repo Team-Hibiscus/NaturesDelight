@@ -1,0 +1,58 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    [
+      {
+        "item": "natures_spirit:saxaul_door"
+      },
+      {
+        "item": "natures_spirit:saxaul_trapdoor"
+      },
+      {
+        "item": "natures_spirit:saxaul_sign"
+      },
+      {
+        "item": "natures_spirit:saxaul_hanging_sign"
+      },
+      {
+        "item": "natures_spirit:saxaul_fence"
+      },
+      {
+        "item": "natures_spirit:saxaul_fence_gate"
+      },
+      {
+        "item": "natures_spirit:saxaul_pressure_plate"
+      },
+      {
+        "item": "natures_spirit:saxaul_button"
+      },
+      {
+        "item": "natures_spirit:saxaul_boat"
+      },
+      {
+        "item": "natures_delight:saxaul_cabinet"
+      }
+    ]
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:saxaul_planks"
+      }
+    }
+  ],
+  "tool": {
+    "fabric:type": "fabric:any",
+    "ingredients": [
+      {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "axe_dig"
+      },
+      {
+        "tag": "minecraft:axes"
+      }
+    ]
+  }
+}

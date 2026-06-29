@@ -63,7 +63,7 @@ public class NaturesDelightDataGen implements DataGeneratorEntrypoint {
       protected void configure(RegistryWrapper.WrapperLookup arg) {
          for(Block block: NaturesDelightBlocksAndItems.CABINETS) {
             Item item = block.asItem();
-            this.getOrCreateTagBuilder(ModTags.WOODEN_CABINETS).add(item);
+            this.getOrCreateTagBuilder(ModTags.Items.CABINETS_WOODEN).add(item);
          }
       }
    }

@@ -1,0 +1,58 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    [
+      {
+        "item": "natures_spirit:aspen_door"
+      },
+      {
+        "item": "natures_spirit:aspen_trapdoor"
+      },
+      {
+        "item": "natures_spirit:aspen_sign"
+      },
+      {
+        "item": "natures_spirit:aspen_hanging_sign"
+      },
+      {
+        "item": "natures_spirit:aspen_fence"
+      },
+      {
+        "item": "natures_spirit:aspen_fence_gate"
+      },
+      {
+        "item": "natures_spirit:aspen_pressure_plate"
+      },
+      {
+        "item": "natures_spirit:aspen_button"
+      },
+      {
+        "item": "natures_spirit:aspen_boat"
+      },
+      {
+        "item": "natures_delight:aspen_cabinet"
+      }
+    ]
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:aspen_planks"
+      }
+    }
+  ],
+  "tool": {
+    "fabric:type": "fabric:any",
+    "ingredients": [
+      {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "axe_dig"
+      },
+      {
+        "tag": "minecraft:axes"
+      }
+    ]
+  }
+}

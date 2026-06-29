@@ -1,0 +1,58 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    [
+      {
+        "item": "natures_spirit:willow_door"
+      },
+      {
+        "item": "natures_spirit:willow_trapdoor"
+      },
+      {
+        "item": "natures_spirit:willow_sign"
+      },
+      {
+        "item": "natures_spirit:willow_hanging_sign"
+      },
+      {
+        "item": "natures_spirit:willow_fence"
+      },
+      {
+        "item": "natures_spirit:willow_fence_gate"
+      },
+      {
+        "item": "natures_spirit:willow_pressure_plate"
+      },
+      {
+        "item": "natures_spirit:willow_button"
+      },
+      {
+        "item": "natures_spirit:willow_boat"
+      },
+      {
+        "item": "natures_delight:willow_cabinet"
+      }
+    ]
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:willow_planks"
+      }
+    }
+  ],
+  "tool": {
+    "fabric:type": "fabric:any",
+    "ingredients": [
+      {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "axe_dig"
+      },
+      {
+        "tag": "minecraft:axes"
+      }
+    ]
+  }
+}

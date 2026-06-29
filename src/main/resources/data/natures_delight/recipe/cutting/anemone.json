@@ -14,6 +14,15 @@
     }
   ],
   "tool": {
-    "tag": "c:tools/knives"
+    "fabric:type": "fabric:any",
+    "ingredients": [
+      {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "knife_dig"
+      },
+      {
+        "tag": "c:tools/knife"
+      }
+    ]
   }
 }

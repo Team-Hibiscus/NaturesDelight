@@ -61,7 +61,7 @@ public class NaturesDelightBlocksAndItems {
    public static final Item ALFREDO_PASTA_ITEM = registerItem("alfredo_pasta", new Item(ModItems.bowlFoodItem(ALFREDO_PASTA)), NSItemGroups.NS_ITEM_GROUP, MANAKISH_SLICE_ITEM);
    public static final FoodComponent TURNIP_TAGINE = (new FoodComponent.Builder())
            .nutrition(12).saturationModifier(0.70f)
-           .statusEffect(new StatusEffectInstance(ModEffects.COMFORT, FoodValues.MEDIUM_DURATION, 0), 1.0F).build();
+           .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, FoodValues.MEDIUM_DURATION, 0), 1.0F).build();
    public static final Item TURNIP_TAGINE_ITEM = registerItem("turnip_tagine", new Item(ModItems.bowlFoodItem(TURNIP_TAGINE)), NSItemGroups.NS_ITEM_GROUP, ALFREDO_PASTA_ITEM);
    public static final Item COCONUT_SAUCE_ITEM = registerItem("coconut_sauce", new Item(ModItems.bowlFoodItem(FoodValues.TOMATO_SAUCE)), NSItemGroups.NS_ITEM_GROUP, TURNIP_TAGINE_ITEM);
    public static final FoodComponent SWEET_AND_SAVORY_SAUTE = (new FoodComponent.Builder())
@@ -70,7 +70,7 @@ public class NaturesDelightBlocksAndItems {
    public static final Item SWEET_AND_SAVORY_SAUTE_ITEM = registerItem("sweet_and_savory_saute", new Item(ModItems.bowlFoodItem(SWEET_AND_SAVORY_SAUTE)), NSItemGroups.NS_ITEM_GROUP, COCONUT_SAUCE_ITEM);
    public static final FoodComponent FAFARU = (new FoodComponent.Builder())
            .nutrition(14).saturationModifier(0.8f)
-           .statusEffect(new StatusEffectInstance(ModEffects.COMFORT, FoodValues.LONG_DURATION, 0), 1.0F).build();
+           .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, FoodValues.LONG_DURATION, 0), 1.0F).build();
    public static final Item FAFARU_ITEM = registerItem("fafaru", new Item(ModItems.bowlFoodItem(FAFARU)), NSItemGroups.NS_ITEM_GROUP, SWEET_AND_SAVORY_SAUTE_ITEM);
    public static final FoodComponent COCONUT_PANCAKES = (new FoodComponent.Builder())
            .nutrition(10).saturationModifier(0.6f)
